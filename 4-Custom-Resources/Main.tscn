@@ -1,0 +1,67 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Enemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Main.gd" type="Script" id=3]
+[ext_resource path="res://font/Xolonium-Regular.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://player_health.tres" type="Resource" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+font_data = ExtResource( 4 )
+
+[node name="Main" type="Node"]
+script = ExtResource( 3 )
+player_health = ExtResource( 5 )
+
+[node name="Enemy" parent="." instance=ExtResource( 1 )]
+position = Vector2( 404, 330 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 663, 329 )
+
+[node name="EnemyLabel" type="Label" parent="."]
+margin_left = 265.0
+margin_top = 207.0
+margin_right = 520.0
+margin_bottom = 288.0
+custom_fonts/font = SubResource( 1 )
+text = "left for take 2 damage"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerLabel" type="Label" parent="."]
+margin_left = 521.0
+margin_top = 210.0
+margin_right = 803.0
+margin_bottom = 291.0
+custom_fonts/font = SubResource( 2 )
+text = "rigth for take 1 damage"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthLabel" type="Label" parent="."]
+margin_left = 481.0
+margin_top = 48.0
+margin_right = 588.0
+margin_bottom = 119.0
+custom_fonts/font = SubResource( 3 )
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
